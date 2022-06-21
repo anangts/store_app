@@ -5,11 +5,14 @@
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/fonts/Roboto-Thin.ttf
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/fonts/Roboto-Regular.ttf
+/home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/chic4.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/category6.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/meat1.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/meat2.jpg
+/home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/chic1.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/meat3.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/onboard1.jpg
+/home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/chic2.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/cow1.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/category5.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/meat4.jpg
@@ -22,8 +25,10 @@
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/meat5.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/onboard2.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/pork2.jpg
+/home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/chic3.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/pork5.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/pinred.png
+/home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/chic5.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/category4.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/cow4.jpg
 /home/ap/Documents/github_files/store_app/build/linux/x64/debug/bundle/data/flutter_assets/assets/imgs/pork1.jpg

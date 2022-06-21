@@ -29,10 +29,10 @@ class Utils {
             imgName: 'meat1',
             part: [
               CategoryPart(name: 'Ribs', imgName: 'pork1', isSelected: false),
-              CategoryPart(name: 'Perut', imgName: 'pork2', isSelected: false),
-              CategoryPart(name: 'Kulit', imgName: 'pork3', isSelected: false),
+              CategoryPart(name: 'Belly', imgName: 'pork2', isSelected: false),
+              CategoryPart(name: 'Skin', imgName: 'pork3', isSelected: false),
               CategoryPart(name: 'Ham', imgName: 'pork4', isSelected: false),
-              CategoryPart(name: 'kaki', imgName: 'pork5', isSelected: false),
+              CategoryPart(name: 'Leg', imgName: 'pork5', isSelected: false),
             ],
           ),
           SubCategory(
@@ -45,7 +45,7 @@ class Utils {
                     name: 'sirloin', imgName: 'cow1', isSelected: false),
                 CategoryPart(
                     name: 'Terderloin', imgName: 'cow2', isSelected: false),
-                CategoryPart(name: 'iga', imgName: 'cow3', isSelected: false),
+                CategoryPart(name: 'Ribs', imgName: 'cow3', isSelected: false),
                 CategoryPart(name: 'Tbon', imgName: 'cow4', isSelected: false),
                 CategoryPart(
                     name: 'Sengkel', imgName: 'cow5', isSelected: false),
@@ -56,20 +56,28 @@ class Utils {
               color: AppColor.meat,
               imgName: 'meat3',
               part: [
-                CategoryPart(name: 'dada', imgName: 'chic1', isSelected: false),
                 CategoryPart(
-                    name: 'sayap', imgName: 'chic2', isSelected: false),
-                CategoryPart(name: 'paha', imgName: 'chic3', isSelected: false),
+                    name: 'Breast', imgName: 'chic1', isSelected: false),
                 CategoryPart(
-                    name: 'kepala', imgName: 'chic4', isSelected: false),
+                    name: 'wings', imgName: 'chic2', isSelected: false),
                 CategoryPart(
-                    name: 'ceker', imgName: 'chic5', isSelected: false),
+                    name: 'Top leg', imgName: 'chic3', isSelected: false),
+                CategoryPart(name: 'head', imgName: 'chic4', isSelected: false),
+                CategoryPart(name: 'leg', imgName: 'chic5', isSelected: false),
               ]),
           SubCategory(
               name: 'Duck',
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
-              imgName: 'meat4'),
+              imgName: 'meat4',
+              part: [
+                CategoryPart(name: 'Leg', imgName: 'duck1', isSelected: false),
+                CategoryPart(
+                    name: 'peking', imgName: 'duck2', isSelected: false),
+                CategoryPart(
+                    name: 'Breast', imgName: 'duck3', isSelected: false),
+                CategoryPart(name: 'full', imgName: 'duck4', isSelected: false),
+              ]),
           SubCategory(
               name: 'Goat',
               icon: IcoFontIcons.steak,
