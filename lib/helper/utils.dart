@@ -82,7 +82,15 @@ class Utils {
               name: 'Goat',
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
-              imgName: 'meat5'),
+              imgName: 'meat5',
+              part: [
+                CategoryPart(
+                    name: 'Shoulder', imgName: 'goat1', isSelected: false),
+                CategoryPart(name: 'Neck', imgName: 'goat2', isSelected: false),
+                CategoryPart(name: 'Ribs', imgName: 'goat3', isSelected: false),
+                CategoryPart(name: 'Loin', imgName: 'goat4', isSelected: false),
+                CategoryPart(name: 'Leg', imgName: 'goat5', isSelected: false),
+              ]),
           SubCategory(
               name: 'Rabbit',
               icon: IcoFontIcons.steak,
