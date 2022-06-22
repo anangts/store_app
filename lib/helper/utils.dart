@@ -240,7 +240,44 @@ class Utils {
         name: "Cakes",
         imgName: "category5",
         iconName: IcoFontIcons.cupCake,
-        subCategory: [],
+        subCategory: [
+          SubCategory(
+              name: 'Chiffon',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'cake1',
+              part: [
+                CategoryPart(
+                    name: 'Chiffon', imgName: 'cake1', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Brownis',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'cake2',
+              part: [
+                CategoryPart(
+                    name: 'Brownis', imgName: 'cake2', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Apple Pie',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'cake3',
+              part: [
+                CategoryPart(
+                    name: 'Apple Pie', imgName: 'cake3', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Tiramisu',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'cake4',
+              part: [
+                CategoryPart(
+                    name: 'Tiramisu', imgName: 'cake4', isSelected: false),
+              ]),
+        ],
       ),
       Category(
         color: AppColor.spices,
