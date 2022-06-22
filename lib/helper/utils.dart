@@ -95,7 +95,12 @@ class Utils {
               name: 'Rabbit',
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
-              imgName: 'meat6'),
+              imgName: 'meat6',
+              part: [
+                CategoryPart(
+                    name: 'Breast', imgName: 'rab1', isSelected: false),
+                CategoryPart(name: 'Full', imgName: 'rab2', isSelected: false),
+              ]),
         ],
       ),
       Category(
@@ -103,7 +108,44 @@ class Utils {
         name: "Fruit",
         imgName: "category2",
         iconName: IcoFontIcons.avocado,
-        subCategory: [],
+        subCategory: [
+          SubCategory(
+              name: 'Banana',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'fruit1',
+              part: [
+                CategoryPart(
+                    name: 'Banana', imgName: 'fruit1', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Grape',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'fruit2',
+              part: [
+                CategoryPart(
+                    name: 'Grape', imgName: 'fruit2', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Apple',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'fruit3',
+              part: [
+                CategoryPart(
+                    name: 'Apple', imgName: 'fruit3', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Orange',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'fruit4',
+              part: [
+                CategoryPart(
+                    name: 'Orange', imgName: 'fruit4', isSelected: false),
+              ]),
+        ],
       ),
       Category(
         color: AppColor.vegs,
