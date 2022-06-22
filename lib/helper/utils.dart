@@ -152,7 +152,44 @@ class Utils {
         name: "Vegetables",
         imgName: "category3",
         iconName: IcoFontIcons.broccoli,
-        subCategory: [],
+        subCategory: [
+          SubCategory(
+              name: 'Cabbage',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'veg1',
+              part: [
+                CategoryPart(
+                    name: 'Cabbage', imgName: 'veg1', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Brocolli',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'veg2',
+              part: [
+                CategoryPart(
+                    name: 'Brocolli', imgName: 'veg2', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Carrot',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'veg3',
+              part: [
+                CategoryPart(
+                    name: 'Carrot', imgName: 'veg3', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Tomato',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'veg4',
+              part: [
+                CategoryPart(
+                    name: 'Tomato', imgName: 'veg4', isSelected: false),
+              ]),
+        ],
       ),
       Category(
         color: AppColor.seeds,
