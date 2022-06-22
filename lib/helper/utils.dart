@@ -284,7 +284,64 @@ class Utils {
         name: "Spices",
         imgName: "category6",
         iconName: IcoFontIcons.pepper,
-        subCategory: [],
+        subCategory: [
+          SubCategory(
+              name: 'Cinnamon',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'spice1',
+              part: [
+                CategoryPart(
+                    name: 'Cinnamon', imgName: 'spice1', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Black Pepper',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'spice2',
+              part: [
+                CategoryPart(
+                    name: 'Black Pepper', imgName: 'spice2', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Onion Powder',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'spice3',
+              part: [
+                CategoryPart(
+                    name: 'Onion Powder', imgName: 'spice3', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Garlic powder',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'spice4',
+              part: [
+                CategoryPart(
+                    name: 'Garlic Powder',
+                    imgName: 'spice4',
+                    isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Ginger',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'spice5',
+              part: [
+                CategoryPart(
+                    name: 'Ginger', imgName: 'spice5', isSelected: false),
+              ]),
+          SubCategory(
+              name: 'Nutmeg',
+              icon: IcoFontIcons.steak,
+              color: AppColor.meat,
+              imgName: 'spice6',
+              part: [
+                CategoryPart(
+                    name: 'Nutmeg', imgName: 'spice6', isSelected: false),
+              ]),
+        ],
       ),
     ];
   }
