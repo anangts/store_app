@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/pages/categorylistpage.dart';
-import 'package:store_app/pages/splashscreen.dart';
+import 'package:store_app/services/loginservice.dart';
+import 'package:store_app/widgets/themebutton.dart';
 
+// ignore: must_be_immutable
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+  WelcomePage({Key? key}) : super(key: key);
+
+  LoginService loginService = LoginService();
 
   @override
   Widget build(BuildContext context) {
@@ -64,78 +68,22 @@ class WelcomePage extends StatelessWidget {
                   const SizedBox(
                     height: 100.0,
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 15.0),
-                    child: ElevatedButton(
-                      onPressed: () {
+                  ThemeButton(label: 'DAFTAR', onClick: () {}),
+                  ThemeButton(
+                    label: 'LOGIN',
+                    color: Colors.transparent,
+                    onClick: () async {
+                      bool success = await loginService.signInWithGoogle();
+
+                      if (success) {
+                        // ignore: use_build_context_synchronously
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SplashScreen(),
-                          ),
-                        );
-                      },
-                      style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: const BorderSide(color: Colors.green),
-                          ),
-                        ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            AppColor.mainColor),
-                        padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(
-                              vertical: 20.0, horizontal: 20.0),
-                        ),
-                      ),
-                      child: const Text(
-                        "DAFTAR",
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                        ),
-                        // style: GoogleFonts.lato(
-                        //     fontSize: 12.0, color: Colors.white),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.fromLTRB(100.0, 15.0, 100.0, 15.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CategoryListPage(),
-                          ),
-                        );
-                      },
-                      style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: const BorderSide(color: AppColor.mainColor),
-                          ),
-                        ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.transparent),
-                        padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(
-                              vertical: 20.0, horizontal: 20.0),
-                        ),
-                      ),
-                      child: const Text(
-                        "LOGIN",
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                        ),
-                      ),
-                    ),
-                  ),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CategoryListPage()));
+                      }
+                    },
+                  )
                 ],
               ),
             )

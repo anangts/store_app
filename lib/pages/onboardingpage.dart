@@ -89,7 +89,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const WelcomePage(),
+                      builder: (context) => WelcomePage(),
                     ),
                   );
                 },

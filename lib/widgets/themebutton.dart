@@ -25,7 +25,7 @@ class ThemeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 8.0),
       child: ElevatedButton(
         onPressed: onClick,
         style: ButtonStyle(
@@ -37,7 +37,7 @@ class ThemeButton extends StatelessWidget {
           ),
           backgroundColor: MaterialStateProperty.all<Color>(color),
           padding: MaterialStateProperty.all(
-            const EdgeInsets.symmetric(vertical: 15.0, horizontal: 25.0),
+            const EdgeInsets.symmetric(vertical: 20.0, horizontal: 25.0),
           ),
         ),
         child: Text(

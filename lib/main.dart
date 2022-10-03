@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import, duplicate_ignore
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:store_app/helper/utils.dart';
@@ -10,7 +11,14 @@ import 'package:store_app/pages/onboardingpage.dart';
 // ignore: unused_import
 import 'package:store_app/pages/splashscreen.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
