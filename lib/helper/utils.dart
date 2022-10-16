@@ -8,9 +8,9 @@ import 'package:store_app/models/subcategory.dart';
 class Utils {
   static List<OnBoarding> getOnboarding() {
     return [
-      OnBoarding(message: "welcome to our app", img: 'onboard1'),
-      OnBoarding(message: 'having experience with us', img: 'onboard2'),
-      OnBoarding(message: 'lets start your journey', img: 'onboard3'),
+      OnBoarding(title: "welcome to our app", image: 'onboard1'),
+      OnBoarding(title: 'having experience with us', image: 'onboard2'),
+      OnBoarding(title: 'lets start your journey', image: 'onboard3'),
     ];
   }
 

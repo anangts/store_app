@@ -68,7 +68,14 @@ class WelcomePage extends StatelessWidget {
                   const SizedBox(
                     height: 100.0,
                   ),
-                  ThemeButton(label: 'DAFTAR', onClick: () {}),
+                  ThemeButton(
+                      label: 'DAFTAR',
+                      onClick: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CategoryListPage()));
+                      }),
                   ThemeButton(
                     label: 'LOGIN',
                     color: Colors.transparent,

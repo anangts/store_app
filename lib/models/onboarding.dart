@@ -1,7 +1,9 @@
  
 class OnBoarding {
-  late String? message;
-  late String? img;
+ 
+  final String? title;
+  final String? image;
+  final String? desc;
 
-  OnBoarding({this.message, this.img});
+  OnBoarding({this.title, this.image,this.desc});
 }
