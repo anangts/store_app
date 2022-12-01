@@ -41,7 +41,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     final mediaQueryData = MediaQuery.of(context);
     double widthScreen = mediaQueryData.size.width;
     double heightScreen = mediaQueryData.size.height;
-    double blockH = widthScreen / 100;
+    //double blockH = widthScreen / 100;
     double blockV = heightScreen / 100;
 
     return Scaffold(
@@ -56,42 +56,29 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 onPageChanged: (value) => setState(() => _currentPage = value),
                 itemCount: onBoarding.length,
                 itemBuilder: (context, i) {
-                  return Container(
-                    // color: colors[i],
-                    child: Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/imgs/${onBoarding[i].image}.png',
-                            height: blockV * 35,
+                  return Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/imgs/${onBoarding[i].image}.png',
+                          height: blockV * 35,
+                        ),
+                        SizedBox(
+                          height: (heightScreen >= 840) ? 60 : 30,
+                        ),
+                        Text(
+                          onBoarding[i].title!,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: (widthScreen <= 550) ? 30 : 35,
                           ),
-
-                          SizedBox(
-                            height: (heightScreen >= 840) ? 60 : 30,
-                          ),
-                          Text(
-                            onBoarding[i].title!,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: (widthScreen <= 550) ? 30 : 35,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          // Text(
-                          //   onBoarding[i].desc,
-                          //   style: TextStyle(
-
-                          //     fontWeight: FontWeight.w300,
-                          //     fontSize: (width <= 550) ? 17 : 25,
-                          //   ),
-                          //   textAlign: TextAlign.center,
-                          // )
-                        ],
-                      ),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                      ],
                     ),
                   );
                 },
@@ -115,10 +102,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) =>
-                                          CategoryListPage())));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CategoryListPage(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,

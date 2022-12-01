@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/models/subcategory.dart';
-// ignore: unused_import
-import 'package:store_app/pages/mappage.dart';
-
 import 'package:store_app/widgets/categoryicon.dart';
 import 'package:store_app/widgets/categorypartlist.dart';
 import 'package:store_app/widgets/mainappbar.dart';
 import 'package:store_app/widgets/themebutton.dart';
 import 'package:store_app/widgets/unitpricewidget.dart';
 
-// ignore: must_be_immutable
 class DetailsPage extends StatefulWidget {
   final SubCategory subCategory;
 

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/pages/categorylistpage.dart';
-import 'package:store_app/services/loginservice.dart';
 import 'package:store_app/widgets/themebutton.dart';
 
-// ignore: must_be_immutable
 class WelcomePage extends StatelessWidget {
-  WelcomePage({Key? key}) : super(key: key);
-
-  LoginService loginService = LoginService();
+  const WelcomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -74,21 +70,19 @@ class WelcomePage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => CategoryListPage()));
+                              builder: (context) => CategoryListPage(),
+                            ));
                       }),
                   ThemeButton(
                     label: 'LOGIN',
                     color: Colors.transparent,
                     onClick: () async {
-                      bool success = await loginService.signInWithGoogle();
-
-                      if (success) {
-                        // ignore: use_build_context_synchronously
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CategoryListPage()));
-                      }
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CategoryListPage(),
+                        ),
+                      );
                     },
                   )
                 ],

@@ -11,13 +11,11 @@ import 'package:store_app/pages/onboardingpage.dart';
 // ignore: unused_import
 import 'package:store_app/pages/splashscreen.dart';
 
-import 'firebase_options.dart';
-
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   runApp(const MyApp());
 }
@@ -30,12 +28,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body:
-            //DetailsPage(
-            //subCategory: Utils.getMockedCategories()[0].subCategory![0]),
-            //SplashScreen(),
-            OnBoardingPage(),
-        //MapPage()
+        body: OnBoardingPage(),
       ),
     );
   }
