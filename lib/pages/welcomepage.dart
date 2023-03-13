@@ -1,10 +1,37 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/firebase/auth.dart';
 import 'package:store_app/helper/appcolor.dart';
-import 'package:store_app/pages/categorylistpage.dart';
 import 'package:store_app/widgets/themebutton.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
+
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  String? _errorMessage = '';
+
+// Error Notification
+  Widget _errorNotification() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Text(_errorMessage == '' ? '' : '$_errorMessage'),
+    );
+  }
+
+  // SignIn with Google method with exception
+  Future<void> _googleLogin() async {
+    try {
+      await Auth().signInGoogle();
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        _errorMessage = e.message;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,26 +92,15 @@ class WelcomePage extends StatelessWidget {
                     height: 100.0,
                   ),
                   ThemeButton(
-                      label: 'DAFTAR',
-                      onClick: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CategoryListPage(),
-                            ));
-                      }),
+                    label: 'DAFTAR',
+                    onClick: _googleLogin,
+                  ),
                   ThemeButton(
                     label: 'LOGIN',
                     color: Colors.transparent,
-                    onClick: () async {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CategoryListPage(),
-                        ),
-                      );
-                    },
-                  )
+                    onClick: _googleLogin,
+                  ),
+                  _errorNotification(),
                 ],
               ),
             )

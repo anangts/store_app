@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/utils.dart';
 import 'package:store_app/models/onboarding.dart';
-import 'package:store_app/pages/categorylistpage.dart';
+//import 'package:store_app/pages/categorylistpage.dart';
+import 'package:store_app/pages/welcomepage.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -104,7 +105,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CategoryListPage(),
+                                  builder: (context) => const WelcomePage(),
                                 ),
                               );
                             },
