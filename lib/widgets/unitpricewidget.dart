@@ -6,7 +6,9 @@ class UnitPriceWidget extends StatefulWidget {
   int amount = 0;
   double price = 15.0;
   double cost = 0.0;
-  UnitPriceWidget({Key? key}) : super(key: key);
+  UnitPriceWidget({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<UnitPriceWidget> createState() => _UnitPriceWidgetState();

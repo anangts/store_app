@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:store_app/helper/appcolor.dart';
+import 'package:store_app/models/categorypart.dart';
 import 'package:store_app/models/subcategory.dart';
 import 'package:store_app/widgets/categoryicon.dart';
 import 'package:store_app/widgets/categorypartlist.dart';
@@ -9,10 +11,12 @@ import 'package:store_app/widgets/unitpricewidget.dart';
 
 class DetailsPage extends StatefulWidget {
   final SubCategory subCategory;
+  final CategoryPart categoryPart;
 
   const DetailsPage({
-    required this.subCategory,
     Key? key,
+    required this.subCategory,
+    required this.categoryPart,
   }) : super(key: key);
 
   @override
@@ -31,6 +35,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 bottomRight: Radius.circular(50)),
             child: Stack(
               children: [
+                // background detailspage
                 Container(
                   height: 220,
                   decoration: BoxDecoration(
@@ -55,6 +60,8 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ),
                 ),
+
+                // product's price
                 Positioned(
                   bottom: 0,
                   left: 0,
@@ -72,10 +79,10 @@ class _DetailsPageState extends State<DetailsPage> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            const Text(
-                              'Pork Meat',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                            Text(
+                              ' ${widget.subCategory.name}',
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 20),
                             ),
                             const SizedBox(
                               height: 10,
@@ -98,9 +105,13 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ),
                 ),
+
+                // app bar
                 const MainAppBar(
                   themeColor: Colors.white,
                 ),
+
+                // The number of products that enter the basket
                 Positioned(
                   right: 20,
                   top: 80,

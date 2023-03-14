@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/models/category.dart';
 import 'package:store_app/helper/utils.dart';
-import 'package:store_app/pages/selectedcategorypage.dart';
+import 'package:store_app/pages/subcategory_page.dart';
 import 'package:store_app/widgets/categorybuttonbar.dart';
 import 'package:store_app/widgets/categorycard.dart';
 import 'package:store_app/widgets/mainappbar.dart';
 
-class CategoryListPage extends StatelessWidget {
-  CategoryListPage({Key? key}) : super(key: key);
+class CategoryPage extends StatelessWidget {
+  CategoryPage({Key? key}) : super(key: key);
   final List<Category> categories = Utils.getMockedCategories();
 
   @override
@@ -41,7 +41,7 @@ class CategoryListPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SelectedCategoryPage(
+                            builder: (context) => SubCategoryPage(
                               selectedCategory: categories[index],
                             ),
                           ),

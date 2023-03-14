@@ -9,7 +9,8 @@ class SubCategory extends Category {
       required String name,
       required IconData icon,
       required Color color,
-      required String imgName})
+      required String imgName,
+      })
       : super(
           name: name,
           iconName: icon,

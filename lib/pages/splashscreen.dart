@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
-import 'package:store_app/pages/welcomepage.dart';
+import 'package:store_app/pages/onboarding_page.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const WelcomePage(),
+            builder: (context) => const OnBoardingPage(),
           ),
         );
       },

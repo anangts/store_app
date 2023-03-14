@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/models/category.dart';
-import 'package:store_app/pages/detailspage.dart';
+import 'package:store_app/pages/details_page.dart';
 import 'package:store_app/widgets/categoryicon.dart';
 import 'package:store_app/widgets/mainappbar.dart';
 
-class SelectedCategoryPage extends StatelessWidget {
+class SubCategoryPage extends StatelessWidget {
   final Category selectedCategory;
-  const SelectedCategoryPage({required this.selectedCategory, Key? key})
+  const SubCategoryPage({required this.selectedCategory, Key? key})
       : super(key: key);
 
   @override
@@ -47,9 +47,12 @@ class SelectedCategoryPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
+                            var categorypart =
+                                selectedCategory.subCategory![index].part;
                             return DetailsPage(
-                              subCategory: selectedCategory.subCategory![index],
-                            );
+                                subCategory:
+                                    selectedCategory.subCategory![index],
+                                categoryPart: categorypart);
                           },
                         ),
                       );

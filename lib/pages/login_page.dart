@@ -4,14 +4,14 @@ import 'package:store_app/firebase/auth.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/widgets/themebutton.dart';
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+class _LoginPageState extends State<LoginPage> {
   String? _errorMessage = '';
 
 // Error Notification

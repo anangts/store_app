@@ -7,9 +7,9 @@ import 'package:store_app/firebase_options.dart';
 // ignore: unused_import
 import 'package:store_app/helper/utils.dart';
 // ignore: unused_import
-import 'package:store_app/pages/detailspage.dart';
-import 'package:store_app/pages/mappage.dart';
-import 'package:store_app/pages/onboardingpage.dart';
+import 'package:store_app/pages/details_page.dart';
+import 'package:store_app/pages/map_page.dart';
+import 'package:store_app/pages/onboarding_page.dart';
 // ignore: unused_import
 import 'package:store_app/pages/splashscreen.dart';
 

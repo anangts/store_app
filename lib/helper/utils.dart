@@ -28,11 +28,19 @@ class Utils {
             color: AppColor.meat,
             imgName: 'meat1',
             part: [
-              CategoryPart(name: 'Ribs', imgName: 'pork1', isSelected: false),
-              CategoryPart(name: 'Belly', imgName: 'pork2', isSelected: false),
-              CategoryPart(name: 'Skin', imgName: 'pork3', isSelected: false),
-              CategoryPart(name: 'Ham', imgName: 'pork4', isSelected: false),
-              CategoryPart(name: 'Leg', imgName: 'pork5', isSelected: false),
+              CategoryPart(
+                  price: 23, name: 'Ribs', imgName: 'pork1', isSelected: false),
+              CategoryPart(
+                  name: 'Belly',
+                  imgName: 'pork2',
+                  isSelected: false,
+                  price: 32),
+              CategoryPart(
+                  name: 'Skin', imgName: 'pork3', isSelected: false, price: 24),
+              CategoryPart(
+                  name: 'Ham', imgName: 'pork4', isSelected: false, price: 36),
+              CategoryPart(
+                  name: 'Leg', imgName: 'pork5', isSelected: false, price: 50),
             ],
           ),
           SubCategory(
@@ -42,13 +50,30 @@ class Utils {
               imgName: 'meat2',
               part: [
                 CategoryPart(
-                    name: 'sirloin', imgName: 'cow1', isSelected: false),
+                    name: 'sirloin',
+                    imgName: 'cow1',
+                    isSelected: false,
+                    price: 45),
                 CategoryPart(
-                    name: 'Terderloin', imgName: 'cow2', isSelected: false),
-                CategoryPart(name: 'Ribs', imgName: 'cow3', isSelected: false),
-                CategoryPart(name: 'Tbon', imgName: 'cow4', isSelected: false),
+                    name: 'Terderloin',
+                    imgName: 'cow2',
+                    isSelected: false,
+                    price: 54),
                 CategoryPart(
-                    name: 'Sengkel', imgName: 'cow5', isSelected: false),
+                    name: 'Ribs',
+                    imgName: 'cow3',
+                    isSelected: false,
+                    price: 44),
+                CategoryPart(
+                    name: 'Tbon',
+                    imgName: 'cow4',
+                    isSelected: false,
+                    price: 41),
+                CategoryPart(
+                    name: 'Sengkel',
+                    imgName: 'cow5',
+                    isSelected: false,
+                    price: 46),
               ]),
           SubCategory(
               name: 'Chicken',
@@ -57,13 +82,30 @@ class Utils {
               imgName: 'meat3',
               part: [
                 CategoryPart(
-                    name: 'Breast', imgName: 'chic1', isSelected: false),
+                    name: 'Breast',
+                    imgName: 'chic1',
+                    isSelected: false,
+                    price: 23),
                 CategoryPart(
-                    name: 'wings', imgName: 'chic2', isSelected: false),
+                    name: 'wings',
+                    imgName: 'chic2',
+                    isSelected: false,
+                    price: 21),
                 CategoryPart(
-                    name: 'Top leg', imgName: 'chic3', isSelected: false),
-                CategoryPart(name: 'head', imgName: 'chic4', isSelected: false),
-                CategoryPart(name: 'leg', imgName: 'chic5', isSelected: false),
+                    name: 'Top leg',
+                    imgName: 'chic3',
+                    isSelected: false,
+                    price: 20),
+                CategoryPart(
+                    name: 'head',
+                    imgName: 'chic4',
+                    isSelected: false,
+                    price: 15),
+                CategoryPart(
+                    name: 'leg',
+                    imgName: 'chic5',
+                    isSelected: false,
+                    price: 19),
               ]),
           SubCategory(
               name: 'Duck',
@@ -71,12 +113,26 @@ class Utils {
               color: AppColor.meat,
               imgName: 'meat4',
               part: [
-                CategoryPart(name: 'Leg', imgName: 'duck1', isSelected: false),
                 CategoryPart(
-                    name: 'peking', imgName: 'duck2', isSelected: false),
+                    name: 'Leg',
+                    imgName: 'duck1',
+                    isSelected: false,
+                    price: 20),
                 CategoryPart(
-                    name: 'Breast', imgName: 'duck3', isSelected: false),
-                CategoryPart(name: 'full', imgName: 'duck4', isSelected: false),
+                    name: 'peking',
+                    imgName: 'duck2',
+                    isSelected: false,
+                    price: 25),
+                CategoryPart(
+                    name: 'Breast',
+                    imgName: 'duck3',
+                    isSelected: false,
+                    price: 26),
+                CategoryPart(
+                    name: 'full',
+                    imgName: 'duck4',
+                    isSelected: false,
+                    price: 54),
               ]),
           SubCategory(
               name: 'Goat',
@@ -85,11 +141,30 @@ class Utils {
               imgName: 'meat5',
               part: [
                 CategoryPart(
-                    name: 'Shoulder', imgName: 'goat1', isSelected: false),
-                CategoryPart(name: 'Neck', imgName: 'goat2', isSelected: false),
-                CategoryPart(name: 'Ribs', imgName: 'goat3', isSelected: false),
-                CategoryPart(name: 'Loin', imgName: 'goat4', isSelected: false),
-                CategoryPart(name: 'Leg', imgName: 'goat5', isSelected: false),
+                    name: 'Shoulder',
+                    imgName: 'goat1',
+                    isSelected: false,
+                    price: 34),
+                CategoryPart(
+                    name: 'Neck',
+                    imgName: 'goat2',
+                    isSelected: false,
+                    price: 36),
+                CategoryPart(
+                    name: 'Ribs',
+                    imgName: 'goat3',
+                    isSelected: false,
+                    price: 30),
+                CategoryPart(
+                    name: 'Loin',
+                    imgName: 'goat4',
+                    isSelected: false,
+                    price: 54),
+                CategoryPart(
+                    name: 'Leg',
+                    imgName: 'goat5',
+                    isSelected: false,
+                    price: 45),
               ]),
           SubCategory(
               name: 'Rabbit',
@@ -98,8 +173,15 @@ class Utils {
               imgName: 'meat6',
               part: [
                 CategoryPart(
-                    name: 'Breast', imgName: 'rab1', isSelected: false),
-                CategoryPart(name: 'Full', imgName: 'rab2', isSelected: false),
+                    name: 'Breast',
+                    imgName: 'rab1',
+                    isSelected: false,
+                    price: 24),
+                CategoryPart(
+                    name: 'Full',
+                    imgName: 'rab2',
+                    isSelected: false,
+                    price: 35),
               ]),
         ],
       ),
@@ -116,7 +198,10 @@ class Utils {
               imgName: 'fruit1',
               part: [
                 CategoryPart(
-                    name: 'Banana', imgName: 'fruit1', isSelected: false),
+                    name: 'Banana',
+                    imgName: 'fruit1',
+                    isSelected: false,
+                    price: 20),
               ]),
           SubCategory(
               name: 'Grape',
@@ -125,7 +210,10 @@ class Utils {
               imgName: 'fruit2',
               part: [
                 CategoryPart(
-                    name: 'Grape', imgName: 'fruit2', isSelected: false),
+                    name: 'Grape',
+                    imgName: 'fruit2',
+                    isSelected: false,
+                    price: 35),
               ]),
           SubCategory(
               name: 'Apple',
@@ -134,7 +222,10 @@ class Utils {
               imgName: 'fruit3',
               part: [
                 CategoryPart(
-                    name: 'Apple', imgName: 'fruit3', isSelected: false),
+                    name: 'Apple',
+                    imgName: 'fruit3',
+                    isSelected: false,
+                    price: 25),
               ]),
           SubCategory(
               name: 'Orange',
@@ -143,7 +234,10 @@ class Utils {
               imgName: 'fruit4',
               part: [
                 CategoryPart(
-                    name: 'Orange', imgName: 'fruit4', isSelected: false),
+                    name: 'Orange',
+                    imgName: 'fruit4',
+                    isSelected: false,
+                    price: 20),
               ]),
         ],
       ),
@@ -160,7 +254,10 @@ class Utils {
               imgName: 'veg1',
               part: [
                 CategoryPart(
-                    name: 'Cabbage', imgName: 'veg1', isSelected: false),
+                    name: 'Cabbage',
+                    imgName: 'veg1',
+                    isSelected: false,
+                    price: 15),
               ]),
           SubCategory(
               name: 'Brocolli',
@@ -169,7 +266,10 @@ class Utils {
               imgName: 'veg2',
               part: [
                 CategoryPart(
-                    name: 'Brocolli', imgName: 'veg2', isSelected: false),
+                    name: 'Brocolli',
+                    imgName: 'veg2',
+                    isSelected: false,
+                    price: 25),
               ]),
           SubCategory(
               name: 'Carrot',
@@ -178,7 +278,10 @@ class Utils {
               imgName: 'veg3',
               part: [
                 CategoryPart(
-                    name: 'Carrot', imgName: 'veg3', isSelected: false),
+                    name: 'Carrot',
+                    imgName: 'veg3',
+                    isSelected: false,
+                    price: 14),
               ]),
           SubCategory(
               name: 'Tomato',
@@ -187,7 +290,10 @@ class Utils {
               imgName: 'veg4',
               part: [
                 CategoryPart(
-                    name: 'Tomato', imgName: 'veg4', isSelected: false),
+                    name: 'Tomato',
+                    imgName: 'veg4',
+                    isSelected: false,
+                    price: 8),
               ]),
         ],
       ),
@@ -204,7 +310,10 @@ class Utils {
               imgName: 'seed1',
               part: [
                 CategoryPart(
-                    name: 'Almond', imgName: 'seed1', isSelected: false),
+                    name: 'Almond',
+                    imgName: 'seed1',
+                    isSelected: false,
+                    price: 45),
               ]),
           SubCategory(
               name: 'Hazelnut',
@@ -213,7 +322,10 @@ class Utils {
               imgName: 'seed2',
               part: [
                 CategoryPart(
-                    name: 'Hazelnut', imgName: 'seed2', isSelected: false),
+                    name: 'Hazelnut',
+                    imgName: 'seed2',
+                    isSelected: false,
+                    price: 43),
               ]),
           SubCategory(
               name: 'Walnut',
@@ -222,7 +334,10 @@ class Utils {
               imgName: 'seed3',
               part: [
                 CategoryPart(
-                    name: 'Walnut', imgName: 'seed3', isSelected: false),
+                    name: 'Walnut',
+                    imgName: 'seed3',
+                    isSelected: false,
+                    price: 29),
               ]),
           SubCategory(
               name: 'Peanut',
@@ -231,7 +346,10 @@ class Utils {
               imgName: 'seed4',
               part: [
                 CategoryPart(
-                    name: 'Peanut', imgName: 'seed4', isSelected: false),
+                    name: 'Peanut',
+                    imgName: 'seed4',
+                    isSelected: false,
+                    price: 20),
               ]),
         ],
       ),
@@ -248,7 +366,10 @@ class Utils {
               imgName: 'cake1',
               part: [
                 CategoryPart(
-                    name: 'Chiffon', imgName: 'cake1', isSelected: false),
+                    name: 'Chiffon',
+                    imgName: 'cake1',
+                    isSelected: false,
+                    price: 44),
               ]),
           SubCategory(
               name: 'Brownis',
@@ -257,7 +378,10 @@ class Utils {
               imgName: 'cake2',
               part: [
                 CategoryPart(
-                    name: 'Brownis', imgName: 'cake2', isSelected: false),
+                    name: 'Brownis',
+                    imgName: 'cake2',
+                    isSelected: false,
+                    price: 45),
               ]),
           SubCategory(
               name: 'Apple Pie',
@@ -266,7 +390,10 @@ class Utils {
               imgName: 'cake3',
               part: [
                 CategoryPart(
-                    name: 'Apple Pie', imgName: 'cake3', isSelected: false),
+                    name: 'Apple Pie',
+                    imgName: 'cake3',
+                    isSelected: false,
+                    price: 39),
               ]),
           SubCategory(
               name: 'Tiramisu',
@@ -275,7 +402,10 @@ class Utils {
               imgName: 'cake4',
               part: [
                 CategoryPart(
-                    name: 'Tiramisu', imgName: 'cake4', isSelected: false),
+                    name: 'Tiramisu',
+                    imgName: 'cake4',
+                    isSelected: false,
+                    price: 30),
               ]),
         ],
       ),
@@ -292,7 +422,10 @@ class Utils {
               imgName: 'spice1',
               part: [
                 CategoryPart(
-                    name: 'Cinnamon', imgName: 'spice1', isSelected: false),
+                    name: 'Cinnamon',
+                    imgName: 'spice1',
+                    isSelected: false,
+                    price: 23),
               ]),
           SubCategory(
               name: 'Black Pepper',
@@ -301,7 +434,10 @@ class Utils {
               imgName: 'spice2',
               part: [
                 CategoryPart(
-                    name: 'Black Pepper', imgName: 'spice2', isSelected: false),
+                    name: 'Black Pepper',
+                    imgName: 'spice2',
+                    isSelected: false,
+                    price: 26),
               ]),
           SubCategory(
               name: 'Onion Powder',
@@ -310,7 +446,10 @@ class Utils {
               imgName: 'spice3',
               part: [
                 CategoryPart(
-                    name: 'Onion Powder', imgName: 'spice3', isSelected: false),
+                    name: 'Onion Powder',
+                    imgName: 'spice3',
+                    isSelected: false,
+                    price: 23),
               ]),
           SubCategory(
               name: 'Garlic powder',
@@ -321,7 +460,8 @@ class Utils {
                 CategoryPart(
                     name: 'Garlic Powder',
                     imgName: 'spice4',
-                    isSelected: false),
+                    isSelected: false,
+                    price: 19),
               ]),
           SubCategory(
               name: 'Ginger',
@@ -330,7 +470,10 @@ class Utils {
               imgName: 'spice5',
               part: [
                 CategoryPart(
-                    name: 'Ginger', imgName: 'spice5', isSelected: false),
+                    name: 'Ginger',
+                    imgName: 'spice5',
+                    isSelected: false,
+                    price: 22),
               ]),
           SubCategory(
               name: 'Nutmeg',
@@ -339,7 +482,10 @@ class Utils {
               imgName: 'spice6',
               part: [
                 CategoryPart(
-                    name: 'Nutmeg', imgName: 'spice6', isSelected: false),
+                    name: 'Nutmeg',
+                    imgName: 'spice6',
+                    isSelected: false,
+                    price: 20),
               ]),
         ],
       ),
