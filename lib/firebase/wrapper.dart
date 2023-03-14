@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:store_app/firebase/auth.dart';
-import 'package:store_app/pages/category_page.dart';
-import 'package:store_app/pages/onboarding_page.dart';
+import 'package:store_app/pages/category_page.dart'; 
+import 'package:store_app/pages/splashscreen.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({
@@ -21,7 +21,7 @@ class _WrapperState extends State<Wrapper> {
     return StreamBuilder(
       stream: Auth().authStateChange,
       builder: (context, snapshot) {
-        return snapshot.hasData ? CategoryPage() : const OnBoardingPage();
+        return snapshot.hasData ? CategoryPage() : const SplashScreen();
       },
     );
   }

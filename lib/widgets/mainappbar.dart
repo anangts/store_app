@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
+import 'package:store_app/pages/login_page.dart';
 
 class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Color themeColor;
@@ -21,6 +22,16 @@ class MainAppBarState extends State<MainAppBar> {
   // Sign out Method
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
+
+    // skip spashscreen and onboarding_page
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => const LoginPage()));
+
+    // another option to skip skip spashscreen and onboarding_page
+    // 
+    // Navigator.of(context).pushAndRemoveUntil(
+    //     MaterialPageRoute(builder: (context) => const LoginPage()),
+    //     (route) => false);
   }
 
   @override

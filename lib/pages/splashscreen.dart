@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(
-      const Duration(milliseconds: 1200),
+      const Duration(seconds: 1),
       () {
         Navigator.push(
           context,
