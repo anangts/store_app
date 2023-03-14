@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
 
-class CategoryButtonBar extends StatelessWidget {
-  const CategoryButtonBar({
+class BottomBarButton extends StatelessWidget {
+  const BottomBarButton({
     Key? key,
   }) : super(key: key);
 
