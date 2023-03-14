@@ -1,8 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
-// ignore: unused_import
-import 'package:store_app/pages/login_page.dart';
 
 class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   final Color themeColor;
@@ -17,20 +14,12 @@ class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class MainAppBarState extends State<MainAppBar> {
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  User? get currentUser => _firebaseAuth.currentUser;
-
-  // Sign out Method
-  Future<void> signOut() async {
-    await _firebaseAuth.signOut();
-  }
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
       title: IconButton(
-        onPressed: signOut,
+        onPressed: () {},
         icon: const Icon(Icons.local_mall_outlined),
         color: AppColor.mainColor,
       ),

@@ -1,9 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/models/category.dart';
 import 'package:store_app/helper/utils.dart';
 import 'package:store_app/pages/subcategory_page.dart';
-import 'package:store_app/widgets/buttonbar.dart';
+import 'package:store_app/widgets/bottombarbutton.dart';
 import 'package:store_app/widgets/categoryicon.dart';
 import 'package:store_app/widgets/mainappbar.dart';
 
@@ -11,10 +12,24 @@ class CategoryPage extends StatelessWidget {
   CategoryPage({Key? key}) : super(key: key);
   final List<Category> categories = Utils.getMockedCategories();
 
+  // signout method
+  Future<void> _signOut() async {
+    final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    await firebaseAuth.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const Drawer(),
+        drawer: Drawer(
+          child: TextButton.icon(
+              label: const Text('Sign out'),
+              onPressed: () {
+                _signOut();
+              },
+              icon: const Center(
+                  child: Icon(Icons.exit_to_app_outlined, size: 64))),
+        ),
         appBar: const MainAppBar(),
         body: Stack(children: [
           Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [

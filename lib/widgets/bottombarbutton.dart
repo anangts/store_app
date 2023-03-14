@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/helper/appcolor.dart';
+import 'package:store_app/helper/progress.dart';
 
 class BottomBarButton extends StatelessWidget {
   const BottomBarButton({
@@ -26,7 +27,9 @@ class BottomBarButton extends StatelessWidget {
             child: Material(
               child: IconButton(
                 icon: const Icon(Icons.favorite, color: AppColor.mainColor),
-                onPressed: () {},
+                onPressed: () {
+                  Notif.onProgress(context);
+                },
               ),
             ),
           ),
@@ -35,7 +38,9 @@ class BottomBarButton extends StatelessWidget {
               child: IconButton(
                 icon:
                     const Icon(Icons.shopping_cart, color: AppColor.mainColor),
-                onPressed: () {},
+                onPressed: () {
+                  Notif.onProgress(context);
+                },
               ),
             ),
           ),
@@ -43,7 +48,9 @@ class BottomBarButton extends StatelessWidget {
             child: Material(
               child: IconButton(
                 icon: const Icon(Icons.pin_drop, color: AppColor.mainColor),
-                onPressed: () {},
+                onPressed: () {
+                  Notif.onProgress(context);
+                },
               ),
             ),
           ),
@@ -51,7 +58,9 @@ class BottomBarButton extends StatelessWidget {
             child: Material(
               child: IconButton(
                 icon: const Icon(Icons.settings, color: AppColor.mainColor),
-                onPressed: () {},
+                onPressed: () {
+                  Notif.onProgress(context);
+                },
               ),
             ),
           ),
