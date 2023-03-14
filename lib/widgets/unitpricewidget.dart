@@ -59,12 +59,10 @@ class _UnitPriceWidgetState extends State<UnitPriceWidget> {
               GestureDetector(
                 onTap: widget.amount > 0
                     ? () {
-                        setState(
-                          () {
-                            widget.amount--;
-                            widget.cost = widget.price * widget.amount;
-                          },
-                        );
+                        setState(() {
+                          widget.amount--;
+                          widget.cost = widget.price * widget.amount;
+                        });
                       }
                     : null,
                 child: const Icon(

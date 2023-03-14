@@ -47,12 +47,9 @@ class SubCategoryPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            var categorypart =
-                                selectedCategory.subCategory![index].part;
                             return DetailsPage(
-                                subCategory:
-                                    selectedCategory.subCategory![index],
-                                categoryPart: categorypart);
+                              subCategory: selectedCategory.subCategory![index],
+                            );
                           },
                         ),
                       );

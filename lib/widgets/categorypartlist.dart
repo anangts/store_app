@@ -26,14 +26,16 @@ class _CategoryPartListState extends State<CategoryPartList> {
         SizedBox(
           height: 200,
           child: ListView.builder(
+            physics: const AlwaysScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            itemCount: widget.subCategory.part!.length,
+            itemCount: widget.subCategory.categorypart!.length,
             itemBuilder: (context, index) => GestureDetector(
               onTap: () {
                 setState(
                   () {
-                    for (var e in widget.subCategory.part!) {
-                      e.isSelected = widget.subCategory.part![index] == e;
+                    for (var e in widget.subCategory.categorypart!) {
+                      e.isSelected =
+                          widget.subCategory.categorypart![index] == e;
                     }
                   },
                 );
@@ -47,14 +49,14 @@ class _CategoryPartListState extends State<CategoryPartList> {
                     height: 150,
                     width: 120,
                     decoration: BoxDecoration(
-                      border: widget.subCategory.part![index].isSelected
+                      border: widget.subCategory.categorypart![index].isSelected
                           ? Border.all(
                               color: widget.subCategory.color!, width: 6.0)
                           : null,
                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
                           image: AssetImage(
-                              'assets/imgs/${widget.subCategory.part![index].imgName}.jpg'),
+                              'assets/imgs/${widget.subCategory.categorypart![index].imgName}.jpg'),
                           fit: BoxFit.cover),
                       boxShadow: [
                         BoxShadow(
@@ -67,7 +69,7 @@ class _CategoryPartListState extends State<CategoryPartList> {
                   Container(
                     margin: const EdgeInsets.only(left: 18),
                     child: Text(
-                      widget.subCategory.part![index].name.toString(),
+                      widget.subCategory.categorypart![index].name.toString(),
                       style: TextStyle(color: widget.subCategory.color),
                     ),
                   ),

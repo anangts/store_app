@@ -27,7 +27,7 @@ class Utils {
             icon: IcoFontIcons.steak,
             color: AppColor.meat,
             imgName: 'meat1',
-            part: [
+            categorypart: [
               CategoryPart(
                   price: 23, name: 'Ribs', imgName: 'pork1', isSelected: false),
               CategoryPart(
@@ -48,7 +48,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'meat2',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'sirloin',
                     imgName: 'cow1',
@@ -80,7 +80,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'meat3',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Breast',
                     imgName: 'chic1',
@@ -112,7 +112,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'meat4',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Leg',
                     imgName: 'duck1',
@@ -139,7 +139,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'meat5',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Shoulder',
                     imgName: 'goat1',
@@ -171,7 +171,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'meat6',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Breast',
                     imgName: 'rab1',
@@ -196,7 +196,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'fruit1',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Banana',
                     imgName: 'fruit1',
@@ -208,7 +208,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'fruit2',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Grape',
                     imgName: 'fruit2',
@@ -220,7 +220,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'fruit3',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Apple',
                     imgName: 'fruit3',
@@ -232,7 +232,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'fruit4',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Orange',
                     imgName: 'fruit4',
@@ -252,7 +252,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'veg1',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Cabbage',
                     imgName: 'veg1',
@@ -264,7 +264,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'veg2',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Brocolli',
                     imgName: 'veg2',
@@ -276,7 +276,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'veg3',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Carrot',
                     imgName: 'veg3',
@@ -288,7 +288,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'veg4',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Tomato',
                     imgName: 'veg4',
@@ -308,7 +308,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'seed1',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Almond',
                     imgName: 'seed1',
@@ -320,7 +320,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'seed2',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Hazelnut',
                     imgName: 'seed2',
@@ -332,7 +332,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'seed3',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Walnut',
                     imgName: 'seed3',
@@ -344,7 +344,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'seed4',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Peanut',
                     imgName: 'seed4',
@@ -364,7 +364,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'cake1',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Chiffon',
                     imgName: 'cake1',
@@ -376,7 +376,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'cake2',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Brownis',
                     imgName: 'cake2',
@@ -388,7 +388,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'cake3',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Apple Pie',
                     imgName: 'cake3',
@@ -400,7 +400,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'cake4',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Tiramisu',
                     imgName: 'cake4',
@@ -420,7 +420,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'spice1',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Cinnamon',
                     imgName: 'spice1',
@@ -432,7 +432,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'spice2',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Black Pepper',
                     imgName: 'spice2',
@@ -444,7 +444,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'spice3',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Onion Powder',
                     imgName: 'spice3',
@@ -456,7 +456,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'spice4',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Garlic Powder',
                     imgName: 'spice4',
@@ -468,7 +468,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'spice5',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Ginger',
                     imgName: 'spice5',
@@ -480,7 +480,7 @@ class Utils {
               icon: IcoFontIcons.steak,
               color: AppColor.meat,
               imgName: 'spice6',
-              part: [
+              categorypart: [
                 CategoryPart(
                     name: 'Nutmeg',
                     imgName: 'spice6',
