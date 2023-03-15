@@ -17,7 +17,7 @@ class ThemeButton extends StatelessWidget {
       this.color = AppColor.mainColor,
       icon,
       this.colorBorder = AppColor.mainColor,
-      this.highlight = AppColor.highlightDefault,
+      ////this.highlight = AppColor.highlightDefault,
       required this.onClick,
       Key? key})
       : super(key: key);

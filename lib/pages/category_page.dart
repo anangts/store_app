@@ -4,7 +4,7 @@ import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/models/category.dart';
 import 'package:store_app/helper/utils.dart';
 import 'package:store_app/pages/subcategory_page.dart';
-import 'package:store_app/widgets/bottombarbutton.dart';
+import 'package:store_app/widgets/bottombar.dart';
 import 'package:store_app/widgets/categoryicon.dart';
 import 'package:store_app/widgets/mainappbar.dart';
 
