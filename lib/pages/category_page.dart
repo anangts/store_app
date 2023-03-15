@@ -21,114 +21,149 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(
-          child: TextButton.icon(
-              label: const Text('Sign out'),
-              onPressed: () {
-                _signOut();
-              },
-              icon: const Center(
-                  child: Icon(Icons.exit_to_app_outlined, size: 64))),
+      drawer: Drawer(
+        child: TextButton.icon(
+          label: const Text('Sign out'),
+          onPressed: () {
+            _signOut();
+          },
+          icon: const Center(
+            child: SizedBox(
+                height: 30,
+                width: 50,
+                child: Icon(Icons.exit_to_app_sharp, size: 64)),
+          ),
         ),
-        appBar: const MainAppBar(),
-        body: Stack(children: [
-          Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            //
-            // Title 'Select Categories'
-            const Padding(
+      ),
+      appBar: const MainAppBar(),
+      body: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Title 'Select Categories'
+              const Padding(
                 padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-                child: Text('Select Categories',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 24.0,
-                        color: AppColor.mainColor))),
+                child: Text(
+                  'Select Categories',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 24.0,
+                      color: AppColor.mainColor),
+                ),
+              ),
 
-            // List all Category
-            Expanded(
+              // List all Category
+              Expanded(
                 child: ListView.builder(
-                    padding: const EdgeInsets.only(bottom: 60.0),
-                    itemCount: categories.length,
-                    itemBuilder: (BuildContext ctx, int index) {
-                      return _categoryCard(
-                          context: context,
-                          category: categories[index],
-                          onPress: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SubCategoryPage(
-                                        selectedCategory: categories[index])));
-                          });
-                    }))
-          ]),
+                  padding: const EdgeInsets.only(bottom: 60.0),
+                  itemCount: categories.length,
+                  itemBuilder: (BuildContext ctx, int index) {
+                    return _categoryCard(
+                      context: context,
+                      category: categories[index],
+                      onPress: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SubCategoryPage(
+                                selectedCategory: categories[index]),
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
 
           // button bottombar
           const Positioned(
-              bottom: 0.0, right: 0.0, left: 0.0, child: BottomBarButton()),
-        ]));
+            bottom: 0.0,
+            right: 0.0,
+            left: 0.0,
+            child: BottomBarButton(),
+          ),
+        ],
+      ),
+    );
   }
 
-// method category card
+  // method category card
   Widget _categoryCard(
       {required BuildContext context,
       required Category category,
       final VoidCallback? onPress}) {
     return Container(
-        padding: const EdgeInsets.all(1.0),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-        margin: const EdgeInsets.only(
-            top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
-        height: 150.0,
-        child: Stack(children: [
+      padding: const EdgeInsets.all(1.0),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+      margin: const EdgeInsets.only(
+          top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
+      height: 150.0,
+      child: Stack(
+        children: [
           Positioned.fill(
-              child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
-                  child: Image.asset('assets/imgs/${category.imgName}.jpg',
-                      fit: BoxFit.cover))),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: Image.asset('assets/imgs/${category.imgName}.jpg',
+                  fit: BoxFit.cover),
+            ),
+          ),
           Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                  height: 120,
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(20.0),
-                          bottomRight: Radius.circular(20.0)),
-                      gradient: LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
-                          colors: [
-                            Colors.black.withOpacity(0.8),
-                            Colors.transparent
-                          ])))),
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 120,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(20.0),
+                    bottomRight: Radius.circular(20.0)),
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Colors.black.withOpacity(0.8), Colors.transparent],
+                ),
+              ),
+            ),
+          ),
           Positioned(
-              bottom: 0,
-              child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(children: [
-                    CategoryIcon(
-                        iconName: category.iconName,
-                        color: category.color,
-                        categories: const []),
-                    const SizedBox(width: 15.0),
-                    Text(category.name.toString(),
-                        style: const TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 24.0,
-                            color: Colors.white))
-                  ]))),
+            bottom: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  CategoryIcon(
+                      iconName: category.iconName,
+                      color: category.color,
+                      categories: const []),
+                  const SizedBox(width: 15.0),
+                  Text(
+                    category.name.toString(),
+                    style: const TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 24.0,
+                        color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Material(
-              borderOnForeground: true,
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.transparent,
-              child: InkWell(
-                  borderRadius: BorderRadius.circular(20),
-                  splashColor: AppColor.mainColor,
-                  onTap: onPress,
-                  enableFeedback: true,
-                  excludeFromSemantics: true))
-        ]));
+            borderOnForeground: true,
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.transparent,
+            child: InkWell(
+                borderRadius: BorderRadius.circular(20),
+                splashColor: AppColor.mainColor,
+                onTap: onPress,
+                enableFeedback: true,
+                excludeFromSemantics: true),
+          ),
+        ],
+      ),
+    );
   }
 }

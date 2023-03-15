@@ -18,18 +18,6 @@ class DetailsPage extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(children: [
-      // header background
-      _headerBackground(),
-
-      // details product
-      _detailProduct()
-    ]));
-  }
-
   // details product
   Expanded _detailProduct() {
     return Expanded(
@@ -68,6 +56,7 @@ class _DetailsPageState extends State<DetailsPage> {
     );
   }
 
+  // header backgorund
   ClipRRect _headerBackground() {
     return ClipRRect(
       borderRadius: const BorderRadius.only(
@@ -157,6 +146,21 @@ class _DetailsPageState extends State<DetailsPage> {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          // header background
+          _headerBackground(),
+
+          // details product
+          _detailProduct()
         ],
       ),
     );
