@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/firebase/auth.dart';
 import 'package:store_app/helper/appcolor.dart';
 import 'package:store_app/models/category.dart';
 import 'package:store_app/helper/utils.dart';
@@ -11,12 +11,6 @@ import 'package:store_app/widgets/mainappbar.dart';
 class CategoryPage extends StatelessWidget {
   CategoryPage({Key? key}) : super(key: key);
   final List<Category> categories = Utils.getMockedCategories();
-
-  // signout method
-  Future<void> _signOut() async {
-    final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-    await firebaseAuth.signOut();
-  }
 
   // Bottom Bar Button Menu
   Widget _bottomBarBtn() {
@@ -70,9 +64,7 @@ class CategoryPage extends StatelessWidget {
   Widget _exitBtn() {
     return TextButton.icon(
       label: const Text('Sign out'),
-      onPressed: () {
-        _signOut();
-      },
+      onPressed: () => Auth().signOut(),
       icon: const Center(
         child: SizedBox(
             height: 30,

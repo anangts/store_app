@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   User? get currentUser => _firebaseAuth.currentUser;
+  final GoogleSignIn googleSignIn = GoogleSignIn();
 
   Stream<User?> get authStateChange => _firebaseAuth.authStateChanges();
 
@@ -47,5 +48,7 @@ class Auth {
   // Sign out Method
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
+    await googleSignIn.disconnect();
+    await googleSignIn.signOut();
   }
 }
