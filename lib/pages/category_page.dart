@@ -18,75 +18,66 @@ class CategoryPage extends StatelessWidget {
     await firebaseAuth.signOut();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
-        child: TextButton.icon(
-          label: const Text('Sign out'),
-          onPressed: () {
-            _signOut();
-          },
-          icon: const Center(
-            child: SizedBox(
-                height: 30,
-                width: 50,
-                child: Icon(Icons.exit_to_app_sharp, size: 64)),
-          ),
-        ),
+  // Bottom Bar Button Menu
+  Widget _bottomBarBtn() {
+    return const Positioned(
+      bottom: 0.0,
+      right: 0.0,
+      left: 0.0,
+      child: BottomBarButton(),
+    );
+  }
+
+  // List All Categories
+  Widget _listAllCategory(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+        padding: const EdgeInsets.only(bottom: 60.0),
+        itemCount: categories.length,
+        itemBuilder: (BuildContext ctx, int index) {
+          return _categoryCard(
+            context: context,
+            category: categories[index],
+            onPress: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      SubCategoryPage(selectedCategory: categories[index]),
+                ),
+              );
+            },
+          );
+        },
       ),
-      appBar: const MainAppBar(),
-      body: Stack(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Title 'Select Categories'
-              const Padding(
-                padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-                child: Text(
-                  'Select Categories',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 24.0,
-                      color: AppColor.mainColor),
-                ),
-              ),
+    );
+  }
 
-              // List all Category
-              Expanded(
-                child: ListView.builder(
-                  padding: const EdgeInsets.only(bottom: 60.0),
-                  itemCount: categories.length,
-                  itemBuilder: (BuildContext ctx, int index) {
-                    return _categoryCard(
-                      context: context,
-                      category: categories[index],
-                      onPress: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SubCategoryPage(
-                                selectedCategory: categories[index]),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
+  // title/name page
+  Widget _titlePage() {
+    return const Padding(
+      padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+      child: Text(
+        'Select Categories',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontFamily: 'Roboto', fontSize: 24.0, color: AppColor.mainColor),
+      ),
+    );
+  }
 
-          // button bottombar
-          const Positioned(
-            bottom: 0.0,
-            right: 0.0,
-            left: 0.0,
-            child: BottomBarButton(),
-          ),
-        ],
+  // exit application button
+  Widget _exitBtn() {
+    return TextButton.icon(
+      label: const Text('Sign out'),
+      onPressed: () {
+        _signOut();
+      },
+      icon: const Center(
+        child: SizedBox(
+            height: 30,
+            width: 50,
+            child: Icon(Icons.exit_to_app_sharp, size: 64)),
       ),
     );
   }
@@ -162,6 +153,34 @@ class CategoryPage extends StatelessWidget {
                 enableFeedback: true,
                 excludeFromSemantics: true),
           ),
+        ],
+      ),
+    );
+  }
+
+  // root code
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Drawer(
+        child: _exitBtn(),
+      ),
+      appBar: const MainAppBar(),
+      body: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Title 'Select Categories'
+              _titlePage(),
+
+              // List all Category
+              _listAllCategory(context),
+            ],
+          ),
+
+          // button bottombar
+          _bottomBarBtn(),
         ],
       ),
     );

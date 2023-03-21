@@ -166,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   // background picture
-  Positioned _background() {
+  Widget _background() {
     return Positioned.fill(
       child: Opacity(
         opacity: 0.2,
@@ -179,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   // logo and tag line
-  Flexible _logo() {
+  Widget _logo() {
     return Flexible(
       flex: 4,
       child: Column(
@@ -220,7 +220,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   // entry user accpunt, login option (google, email, anonymous/guest)
-  Flexible _inputData() {
+  Widget _inputData() {
     return Flexible(
       flex: 5,
       child: SingleChildScrollView(
@@ -253,6 +253,23 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  // login view
+  Center _mainLogin(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.8,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _logo(),
+            _inputData(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // dispose method
   @override
   void dispose() {
     controllerName.dispose();
@@ -260,6 +277,7 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
+  // root code
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -269,18 +287,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Stack(
           children: [
             _background(),
-            Center(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _logo(),
-                    _inputData(),
-                  ],
-                ),
-              ),
-            )
+            _mainLogin(context),
           ],
         ),
       ),

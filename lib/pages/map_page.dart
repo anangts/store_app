@@ -27,6 +27,7 @@ class _MapPageState extends State<MapPage> {
   late LatLng currentLocation;
   late LatLng destinationLocation;
 
+  // initial start code
   @override
   void initState() {
     super.initState();
@@ -37,6 +38,7 @@ class _MapPageState extends State<MapPage> {
     setSourceAndDestinationMarkerIcons();
   }
 
+  // instance icon and image
   void setSourceAndDestinationMarkerIcons() async {
     sourceIcon = await BitmapDescriptor.fromAssetImage(
       const ImageConfiguration(devicePixelRatio: 2.0),
@@ -49,6 +51,7 @@ class _MapPageState extends State<MapPage> {
     );
   }
 
+  // method set location
   void setInitialLocation() {
     currentLocation = LatLng(
       sourceLocation.latitude,
@@ -60,92 +63,56 @@ class _MapPageState extends State<MapPage> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    CameraPosition initialCameraPosition = const CameraPosition(
-      target: sourceLocation,
-      zoom: cameraZoom,
-      tilt: cameraTilt,
-      bearing: cameraBearing,
-    );
-
-    return Scaffold(
-      body: Stack(
+  Positioned _mainGmap() {
+    return Positioned(
+      bottom: 20,
+      left: 0,
+      right: 0,
+      child: Column(
         children: [
-          Positioned.fill(
-            child: GoogleMap(
-              initialCameraPosition: initialCameraPosition,
-              myLocationEnabled: true,
-              compassEnabled: false,
-              tiltGesturesEnabled: false,
-              markers: _markers,
-              mapType: MapType.normal,
-              onMapCreated: (GoogleMapController controller) {
-                _controller.complete(controller);
-
-                showPinOnMap();
-              },
-            ),
-          ),
-          const Positioned(
-            top: 60,
-            left: 0,
-            right: 0,
-            child: MapUserBadge(),
-          ),
-          Positioned(
-            bottom: 20,
-            left: 0,
-            right: 0,
-            child: Column(
+          Container(
+            padding: const EdgeInsets.all(15),
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40), color: Colors.white),
+            child: Row(
               children: [
-                Container(
-                  padding: const EdgeInsets.all(15),
-                  margin: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      color: Colors.white),
-                  child: Row(
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          ClipOval(
-                            child: Image.asset(
-                              'assets/imgs/ani1_1.jpg',
-                              height: 60,
-                              width: 60,
-                            ),
-                          ),
-                          const Positioned(
-                            bottom: -8,
-                            right: -8,
-                            child: CategoryIcon(
-                              color: AppColor.meat,
-                              iconName: Icons.access_alarm,
-                              iconsize: 10.00,
-                            ),
-                          ),
-                        ],
+                Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    ClipOval(
+                      child: Image.asset(
+                        'assets/imgs/ani1_1.jpg',
+                        height: 60,
+                        width: 60,
                       ),
-                      const SizedBox(
-                        width: 20,
+                    ),
+                    const Positioned(
+                      bottom: -8,
+                      right: -8,
+                      child: CategoryIcon(
+                        color: AppColor.meat,
+                        iconName: Icons.access_alarm,
+                        iconsize: 10.00,
                       ),
-                      Column(
-                        children: [
-                          Text(
-                            'meat',
-                            style: TextStyle(
-                              color: Colors.grey[700],
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      'meat',
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
@@ -154,6 +121,34 @@ class _MapPageState extends State<MapPage> {
     );
   }
 
+  Widget _invokeMapBadge() {
+    return const Positioned(
+      top: 60,
+      left: 0,
+      right: 0,
+      child: MapUserBadge(),
+    );
+  }
+
+  Widget _instanceGmap(CameraPosition initialCameraPosition) {
+    return Positioned.fill(
+      child: GoogleMap(
+        initialCameraPosition: initialCameraPosition,
+        myLocationEnabled: true,
+        compassEnabled: false,
+        tiltGesturesEnabled: false,
+        markers: _markers,
+        mapType: MapType.normal,
+        onMapCreated: (GoogleMapController controller) {
+          _controller.complete(controller);
+
+          showPinOnMap();
+        },
+      ),
+    );
+  }
+
+  // add and change pin on map
   showPinOnMap() {
     setState(() {
       _markers.add(
@@ -171,5 +166,25 @@ class _MapPageState extends State<MapPage> {
         ),
       );
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    CameraPosition initialCameraPosition = const CameraPosition(
+      target: sourceLocation,
+      zoom: cameraZoom,
+      tilt: cameraTilt,
+      bearing: cameraBearing,
+    );
+
+    return Scaffold(
+      body: Stack(
+        children: [
+          _instanceGmap(initialCameraPosition),
+          _invokeMapBadge(),
+          _mainGmap(),
+        ],
+      ),
+    );
   }
 }
