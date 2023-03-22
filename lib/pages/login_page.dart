@@ -15,6 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController controllerAge = TextEditingController();
   String? _errorMessage = '';
   bool _isLogin = true;
+  bool _isObscure = false;
 
   // SignIn Email method with exception
   Future<void> _signInemail() async {
@@ -84,14 +85,18 @@ class _LoginPageState extends State<LoginPage> {
   // entry field for your email and password
   Widget _entryField(
       {required IconData icon,
+      required TextEditingController controller,
+      bool? isObscure,
       String? title,
-      required TextEditingController controller}) {
+      Widget? iconbtn}) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
       child: TextField(
+        obscureText: isObscure ?? false,
         style: const TextStyle(color: Colors.white),
         controller: controller,
         decoration: InputDecoration(
+          suffixIcon: iconbtn ?? const SizedBox(),
           prefixIcon: Icon(icon, color: AppColor.mainColor),
           labelText: title ?? '',
           labelStyle: const TextStyle(color: AppColor.mainColor),
@@ -104,6 +109,20 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  // icon obscure text
+  Widget _iconObscure() {
+    return IconButton(
+        onPressed: () {
+          setState(() {
+            _isObscure = !_isObscure;
+          });
+        },
+        icon: Icon(
+          _isObscure ? Icons.visibility : Icons.visibility_off,
+          color: AppColor.mainColor,
+        ));
   }
 
   // choice login or register instead
@@ -129,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(30.0),
                 side: const BorderSide(color: AppColor.mainColor, width: 2.0),
               ),
             ),
@@ -231,7 +250,11 @@ class _LoginPageState extends State<LoginPage> {
             _entryField(
                 icon: Icons.people, controller: controllerName, title: 'Email'),
             _entryField(
-                icon: Icons.lock, controller: controllerAge, title: 'Password'),
+                isObscure: !_isObscure,
+                icon: Icons.lock,
+                controller: controllerAge,
+                title: 'Password',
+                iconbtn: _iconObscure()),
             _errorNotification(),
             _button(
                 label: _isLogin ? 'LOGIN' : 'REGISTER',
