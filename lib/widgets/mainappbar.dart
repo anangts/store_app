@@ -28,7 +28,7 @@ class MainAppBarState extends State<MainAppBar> {
       iconTheme: IconThemeData(color: widget.themeColor),
       actions: [
         Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.only(top: 12, right: 20),
           child: ClipOval(
             child: Image.asset('assets/imgs/dian.jpg'),
           ),
